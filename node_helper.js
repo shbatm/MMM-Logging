@@ -14,9 +14,13 @@ var newConsole = require("tracer").console({
 });
 
 module.exports = NodeHelper.create({
+    start: function() {
+        this.initialized = false;
+        console.log("Module helper started for " + this.name);
+    },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === "INITIALIZE_LOGGING") {
+        if (notification === "INITIALIZE_LOGGING" && !this.initialized) {
             this.config = payload;
             if (this.config.useColor) {
                 newConsole = require('tracer').colorConsole(this.config);
@@ -24,6 +28,7 @@ module.exports = NodeHelper.create({
                 newConsole = require('tracer').console(this.config);
             }
             console.info("MMM-Logging updated config received, reloading console");
+            this.initialized = true;
         }
     },
 });

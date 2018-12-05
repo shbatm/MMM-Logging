@@ -32,6 +32,10 @@ Module.register("MMM-Logging", {
 
     // socketNotificationReceived from helper
     socketNotificationReceived: function(notification, payload) {
+        // Do nothing.
+    },
 
+    notificationReceived: function(notification, payload, sender) {
+        // Do nothing.
     },
 });
