@@ -6,6 +6,36 @@ This module extends the Node.js console logging capabilities of the MagicMirrorÂ
 
 By default, this module will intercept and format ALL `console` log messages from the MagicMirror instance once it is loaded.
 
+### Examples:
+
+Before MMM-Logging:
+
+```shell
+0|mm  | Starting MagicMirror: v2.6.0-dev
+0|mm  | Loading config ...
+0|mm  | Loading module helpers ...
+0|mm  | Initializing new module helper ...
+0|mm  | Module helper loaded: MMM-Logging
+0|mm  | No helper found for module: alert.
+```
+
+After MMM-Logging:
+
+```shell
+0|mm  | Starting MagicMirror: v2.6.0-dev
+0|mm  | Loading config ...
+0|mm  | Loading module helpers ...
+0|mm  | 2018-12-05T12:42:51 <log> Initializing new module helper ... (js/app.js:128 loadModule)
+0|mm  | 2018-12-05T12:42:51 <log> Module helper loaded: MMM-Logging (js/app.js:161 loadNextModule)
+0|mm  | 2018-12-05T12:42:51 <log> No helper found for module: alert. (js/app.js:163 )
+```
+
+***Note:***
+You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MichMich/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
+```sh
+export ELECTRON_ENABLE_LOGGING=true
+```
+
 ## Installing the module
 
 To install the module, assuming you have MagicMirror installed with the default configuration:
