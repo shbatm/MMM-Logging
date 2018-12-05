@@ -1,0 +1,24 @@
+{
+  "name": "MMM-Logging",
+  "version": "1.0.0",
+  "description": "Module to provide better Node.js console logging for MagicMirror²",
+  "main": "MMM-Logging.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shbatm/MMM-Logging.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "logging",
+    "logs"
+  ],
+  "author": "shbatm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shbatm/MMM-Logging/issues"
+  },
+  "homepage": "https://github.com/shbatm/MMM-Logging#readme",
+  "dependencies": {
+    "tracer": "github:shbatm/tracer"
+  }
+}
