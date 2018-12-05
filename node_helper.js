@@ -11,7 +11,6 @@ var newConsole = require("tracer").console({
     format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
     overwriteConsoleMethods: true,
     dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-    stackIndex: 2,
 });
 
 module.exports = NodeHelper.create({

@@ -13,7 +13,6 @@ Module.register("MMM-Logging", {
         format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
         overwriteConsoleMethods: true,
         dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-        stackIndex: 2,
     },
 
     requiresVersion: "2.1.0", // Required version of MagicMirror
