@@ -43,6 +43,7 @@ To install the module, assuming you have MagicMirror installed with the default 
 ```shell
 cd ~/MagicMirror/modules
 git clone https://github.com/shbatm/MMM-Logging.git
+cd MMM-Logging/
 npm install
 ```
 
