@@ -73,6 +73,10 @@ Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most
 | Option           | Description
 |----------------- |-----------
 | `useColor`       | *Optional* Whether or not to use `tracer`'s `colorConsole` method or regular `console` method. <br>**Type:** `bool` *Default* `true`.
+| `overwriteConsoleMethods`       | *Optional* Whether or not to overwrite the default Node.JS console methods. If `true` any `console.log`, `console.error`, etc. function calls in any module will be formatted.  If `false`, only calls to `tracer.log`, etc. will be formatted.  In most cases for MagicMirror, if you're using this module, you want `true` <br>**Type:** `bool` *Default* `true`.
+| `overwriteBrowserMethods`       | *Optional* Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls *in the DevTools console* in any module will be formatted.  If `false`, only calls to `tracer.log`, etc. will be formatted.<br>**Type:** `bool` *Default* `false`--usually the DevTools console is good enough for tracing errors.
+| `echoModuleNotifications`       | *Optional* If set any module notifications sent on the front-end will be printed on the Node.JS console log. Can be set to 'notification' to just send the notifications, or 'payload' to include the payloads as well.<br>**Type:** `string` *Default* `'notification'`.
+| `echoErrors`       | *Optional* If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` *Default* `true`.
 
 #### Default configuration:
 
