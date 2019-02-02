@@ -18,6 +18,7 @@ Module.register("MMM-Logging", {
         echoModuleNotifications: 'notification',
         echoErrors: true,
         dateformat: "yyyy-mm-dd'T'HH:MM:ss",
+        ignoreModules: [ 'calendar', 'newsfeed' ]
     },
 
     requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -64,14 +65,12 @@ Module.register("MMM-Logging", {
 
     notificationReceived: function(notification, payload, sender) {
         if (this.config.echoModuleNotifications) {
+            if (sender && this.config.ignoreModules && this.config.ignoreModules.indexOf(sender.name) !== -1) { return; }
             this.sendSocketNotification("NOTIFICATION_TO_CONSOLE", {
                 notification: notification,
                 payload: (payload && this.config.echoModuleNotifications === "payload") ? payload : undefined,
-                sender: (sender) ? sender.nam : undefined
+                sender: (sender) ? sender.name : undefined
             });
-        }
-        if (notification === "CALENDAR_EVENTS") {
-            testerror();
         }
     },
 
