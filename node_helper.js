@@ -30,7 +30,7 @@ module.exports = NodeHelper.create({
             console.info("MMM-Logging updated config received, reloading console");
             this.initialized = true;
         }
-        if (notification === "NOTIFICATION_TO_CONSOLE") {
+        if (notification === "NOTIFICATION_TO_CONSOLE" && payload) {
             tracer.log("Module Notification: " + payload.notification + ((payload.sender) ? " from " + payload.sender : "") + (payload.payload) ? " payload: " + JSON.stringify(payload.payload, undefined, 3) : "");
         }
         if (notification === "BROWSER_ERROR") {
