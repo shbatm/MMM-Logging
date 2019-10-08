@@ -18,7 +18,7 @@ Module.register("MMM-Logging", {
         echoModuleNotifications: 'notification',
         echoErrors: true,
         dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-        ignoreModules: [ 'calendar', 'newsfeed' ]
+        ignoreModules: [ 'calendar', 'newsfeed', 'clock' ]
     },
 
     requiresVersion: "2.1.0", // Required version of MagicMirror
