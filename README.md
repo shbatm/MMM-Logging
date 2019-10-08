@@ -77,7 +77,7 @@ Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most
 | `overwriteBrowserMethods`       | *Optional* Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls *in the DevTools console* in any module will be formatted.  If `false`, only calls to `tracer.log`, etc. will be formatted.<br>**Type:** `bool` *Default* `false`--usually the DevTools console is good enough for tracing errors.
 | `echoModuleNotifications`       | *Optional* If set any module notifications sent on the front-end will be printed on the Node.JS console log. Can be set to 'notification' to just send the notifications, or 'payload' to include the payloads as well.<br>**Type:** `string` *Default* `'notification'`.
 | `echoErrors`       | *Optional* If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` *Default* `true`.
-| `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `calendar` and `newsfeed` since these send a lot of nusance notifications.
+| `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nusance notifications.
 
 #### Default configuration:
 
