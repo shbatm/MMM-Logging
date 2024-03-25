@@ -1,6 +1,6 @@
 # MMM-Logging
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
+This is a module for the [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror/).
 
 This module extends the Node.js console logging capabilities of the MagicMirror² project through implementation of the [`tracer`](https://github.com/baryon/tracer) Node.js module, including adding timestamps and stack traces.
 
@@ -37,6 +37,14 @@ To install the module, assuming you have MagicMirror installed with the default 
 cd ~/MagicMirror/modules
 git clone https://github.com/shbatm/MMM-Logging.git
 cd MMM-Logging/
+npm install
+```
+
+## Updating the module
+
+```
+cd ~/MagicMirror/modules/MMM-Logging
+git pull
 npm install
 ```
 
