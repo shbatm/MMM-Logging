@@ -42,7 +42,7 @@ npm install
 
 ## Updating the module
 
-```
+```sh
 cd ~/MagicMirror/modules/MMM-Logging
 git pull
 npm install
