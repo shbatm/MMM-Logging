@@ -1,6 +1,6 @@
 # MMM-Logging
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
+This is a module for the [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror/).
 
 This module extends the Node.js console logging capabilities of the MagicMirror² project through implementation of the [`tracer`](https://github.com/baryon/tracer) Node.js module, including adding timestamps and stack traces.
 
@@ -21,14 +21,7 @@ Before MMM-Logging:
 
 After MMM-Logging:
 
-```shell
-0|mm  | Starting MagicMirror: v2.6.0-dev
-0|mm  | Loading config ...
-0|mm  | Loading module helpers ...
-0|mm  | 2018-12-05T12:42:51 <log> Initializing new module helper ... (js/app.js:128 loadModule)
-0|mm  | 2018-12-05T12:42:51 <log> Module helper loaded: MMM-Logging (js/app.js:161 loadNextModule)
-0|mm  | 2018-12-05T12:42:51 <log> No helper found for module: alert. (js/app.js:163 )
-```
+![Example 1](example1.png)
 
 ***Note:***
 You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MichMich/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
@@ -44,6 +37,14 @@ To install the module, assuming you have MagicMirror installed with the default 
 cd ~/MagicMirror/modules
 git clone https://github.com/shbatm/MMM-Logging.git
 cd MMM-Logging/
+npm install
+```
+
+## Updating the module
+
+```sh
+cd ~/MagicMirror/modules/MMM-Logging
+git pull
 npm install
 ```
 
