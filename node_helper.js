@@ -31,7 +31,7 @@ module.exports = NodeHelper.create({
             this.initialized = true;
         }
         if (notification === "NOTIFICATION_TO_CONSOLE" && payload) {
-            tracer.log("Module Notification: " + payload.notification + ((payload.sender) ? " from " + payload.sender : "") + (payload.payload) ? " payload: " + JSON.stringify(payload.payload, undefined, 3) : "");
+            tracer.log("Module Notification: " + payload.notification + ((payload.sender) ? " from " + payload.sender : "") + (payload) ? " payload: " + JSON.stringify(payload, undefined, 3) : "");
         }
         if (notification === "BROWSER_ERROR") {
             tracer.log("Browser Error: " + JSON.stringify(payload, undefined, 3));
