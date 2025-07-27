@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.3] - Remove unused dependency
+
+#### Changed
+- Removed unused `tinyify` dependency
+
 ## [1.0.2] - Remove Testing Code & Add Ignore Modules option
 
 #### Added:
