@@ -7,8 +7,6 @@
  * MIT Licensed.
  */
 
-/* jshint esversion: 6 */
-
 Module.register("MMM-Logging", {
     defaults: {
         useColor: true,

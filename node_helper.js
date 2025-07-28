@@ -4,7 +4,6 @@
  * By shbatm
  * MIT Licensed.
  */
-/* jshint node: true, esversion: 6*/
 
 var NodeHelper = require("node_helper");
 var tracer = require("tracer").console({
