@@ -3,11 +3,29 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.0.3](https://github.com/shbatm/MMM-Logging/compare/v1.0.2...v1.0.3) - Remove unused dependency
+## [1.0.4](https://github.com/shbatm/MMM-Logging/compare/v1.0.3...v1.0.4)
 
 ### Changed
 
-- Removed unused `tinyify` dependency
+- chore: add linter and formatter - and fix found issues
+- chore: switch License file to markdown
+- chore: update Code of Conduct to current version
+- docs: add Code of Conduct and License sections to README
+- docs: rework Configuration section
+- refactor: replace dependency `tracer` with own logger
+
+## [1.0.3](https://github.com/shbatm/MMM-Logging/compare/v1.0.2...v1.0.3)
+
+### Changed
+
+- chore: remove unused dependency 'tinyify' from package.json (#7)
+- chore: Non-Substantive changes to conform to recommendations (#5)
+- feat: Default to Ignore Clock Notifications as well
+- refactor: introduce extra variables to make the notification logging logic clearer (#9)
+
+### Fixed
+
+- Ignore empty payloads
 
 ## [1.0.2](https://github.com/shbatm/MMM-Logging/compare/v1.0.1...v1.0.2) - Remove Testing Code & Add Ignore Modules option
 
