@@ -6,9 +6,9 @@ This module extends the Node.js console logging capabilities of the MagicMirrorÂ
 
 By default, this module will intercept and format ALL `console` log messages from the MagicMirror instance once it is loaded.
 
-### Examples
+## Examples
 
-Before MMM-Logging:
+### Before MMM-Logging
 
 ```shell
 0|mm  | Starting MagicMirror: v2.6.0-dev
@@ -19,7 +19,7 @@ Before MMM-Logging:
 0|mm  | No helper found for module: alert.
 ```
 
-After MMM-Logging:
+### After MMM-Logging
 
 ![Example 1](example1.png)
 
@@ -87,16 +87,28 @@ Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most
         format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
         overwriteConsoleMethods: true,
         overwriteBrowserMethods: false,
-        echoModuleNotifications: 'notification',
+        echoModuleNotifications: "notification",
         echoErrors: true,
         dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-        ignoreModules: [ 'calendar', 'newsfeed', 'clock' ]
+        ignoreModules: ["calendar", "newsfeed", "clock"]
     },
 ```
 
-## Code of Conduct
+## Contributing
+
+If you find any problems, bugs or have questions, please [open a GitHub issue](https://github.com/KristjanESPERANTO/MMM-Forum/issues) in this repository.
+
+Pull requests are of course also very welcome ðŸ™‚
+
+### Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+### Developer commands
+
+- `npm install` - Install development dependencies.
+- `node --run lint` - Run linting and formatter checks.
+- `node --run lint:fix` - Fix linting and formatter issues.
 
 ## License
 

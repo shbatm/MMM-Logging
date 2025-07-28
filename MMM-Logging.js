@@ -1,4 +1,5 @@
-/* global Module */
+/* eslint-disable no-console */
+/* global Log, Module, Tracer */
 
 /* MagicMirror²
  * Module: MMM-Logging
@@ -13,15 +14,13 @@ Module.register("MMM-Logging", {
         format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
         overwriteConsoleMethods: true,
         overwriteBrowserMethods: false,
-        echoModuleNotifications: 'notification',
+        echoModuleNotifications: "notification",
         echoErrors: true,
         dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-        ignoreModules: [ 'calendar', 'newsfeed', 'clock' ]
+        ignoreModules: ["calendar", "newsfeed", "clock"]
     },
 
-    requiresVersion: "2.1.0", // Required version of MagicMirror
-
-    start: function() {
+    start () {
         this.sendSocketNotification("INITIALIZE_LOGGING", this.config);
         if (this.config.overwriteBrowserMethods) {
             this.config.overwriteConsoleMethods = true;
@@ -32,44 +31,37 @@ Module.register("MMM-Logging", {
             Log.info = console.info;
             Log.warn = console.warn;
             Log.error = console.error;
-            Log.debug = (console.debug || console.log);
+            Log.debug = console.debug || console.log;
         }
-        console.info("MMM-Logging updated window.console.");
+        Log.info("MMM-Logging updated window.console.");
 
         if (this.config.echoErrors) {
-            console.error = (text) => {
+            Log.error = (text) => {
                 this.sendSocketNotification("BROWSER_ERROR", text);
                 this.console.error(text);
             };
-            window.addEventListener('error', (event) => {
+            window.addEventListener("error", (event) => {
                 this.sendSocketNotification("BROWSER_ERROR", event);
             });
         }
         this.initialized = true;
     },
 
-    getScripts: function() {
-        return ['tracer-bundle.js'];
+    getScripts () {
+        return ["tracer-bundle.js"];
     },
 
-    getStyles: function() {
-        return [];
-    },
-
-    // socketNotificationReceived from helper
-    socketNotificationReceived: function(notification, payload) {
-        // Do nothing.
-    },
-
-    notificationReceived: function(notification, payload, sender) {
+    notificationReceived (notification, payload, sender) {
         if (this.config.echoModuleNotifications) {
-            if (sender && this.config.ignoreModules && this.config.ignoreModules.indexOf(sender.name) !== -1) { return; }
+            if (sender && this.config.ignoreModules?.includes(sender.name)) {
+                return;
+            }
             this.sendSocketNotification("NOTIFICATION_TO_CONSOLE", {
-                notification: notification,
-                payload: (payload && this.config.echoModuleNotifications === "payload") ? payload : undefined,
-                sender: (sender) ? sender.name : undefined
+                notification,
+                payload: payload && this.config.echoModuleNotifications === "payload" ? payload : null,
+                sender: sender ? sender.name : null
             });
         }
-    },
+    }
 
 });
