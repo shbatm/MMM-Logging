@@ -1,8 +1,14 @@
 {
-  "name": "MMM-Logging",
+  "name": "mmm-logging",
   "version": "1.0.3",
   "description": "Module to provide better Node.js console logging for MagicMirror²",
   "main": "MMM-Logging.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint": "eslint && prettier --check .",
+    "lint:fix": "eslint --fix && prettier --write .",
+    "test": "node --run lint"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shbatm/MMM-Logging.git"
@@ -20,5 +26,12 @@
   "homepage": "https://github.com/shbatm/MMM-Logging#readme",
   "dependencies": {
     "tracer": "github:shbatm/tracer"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@eslint/markdown": "^7.1.0",
+    "@stylistic/eslint-plugin": "^5.2.2",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0"
   }
 }
