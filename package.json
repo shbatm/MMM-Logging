@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/shbatm/MMM-Logging#readme",
   "dependencies": {
-    "tinyify": "^2.5.0",
     "tracer": "github:shbatm/tracer"
   }
 }
