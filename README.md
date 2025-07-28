@@ -48,28 +48,27 @@ git pull
 npm install
 ```
 
-## Using the module
+## Configuration
 
 To use this module, add the following configuration block to the **TOP** of the modules array in the `config/config.js` file:
+
+### Minimal configuration
+
 ```js
-var config = {
-    modules: [
         {
             module: 'MMM-Logging',
             config: {
                 // Module functions out of the box with nothing set here.
                 // See below for configurable options.
             }
-        }
-    ]
-}
+        },
 ```
 
-## Configuration options
+### Configuration options
 
 Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most configuration options. They can be applied directly in the `config` section.
 
-#### Module specific options:
+#### Module specific options
 
 | Option           | Description
 |----------------- |-----------
@@ -80,13 +79,17 @@ Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most
 | `echoErrors`       | *Optional* If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` *Default* `true`.
 | `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nusance notifications.
 
-#### Default configuration:
+### Default configuration
 
 ```js
-{
-    format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
-    dateformat: "yyyy-mm-dd'T'HH:MM:ss",
-    stackIndex: 2,
-}
+    {
+        useColor: true,
+        format: "{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})",
+        overwriteConsoleMethods: true,
+        overwriteBrowserMethods: false,
+        echoModuleNotifications: 'notification',
+        echoErrors: true,
+        dateformat: "yyyy-mm-dd'T'HH:MM:ss",
+        ignoreModules: [ 'calendar', 'newsfeed', 'clock' ]
+    },
 ```
-
