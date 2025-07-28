@@ -1,13 +1,15 @@
 # MMM-Logging Change Log
+
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.0.3] - Remove unused dependency
+## [1.0.3](https://github.com/shbatm/MMM-Logging/compare/v1.0.2...v1.0.3) - Remove unused dependency
 
-#### Changed
+### Changed
+
 - Removed unused `tinyify` dependency
 
-## [1.0.2] - Remove Testing Code & Add Ignore Modules option
+## [1.0.2](https://github.com/shbatm/MMM-Logging/compare/v1.0.1...v1.0.2) - Remove Testing Code & Add Ignore Modules option
 
 ### Added
 
@@ -17,14 +19,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Removed errant code from testing phase.
 
-## [1.0.1] - Add browser methods
+## [1.0.1](https://github.com/shbatm/MMM-Logging/compare/v1.0.0...v1.0.1) - Add browser methods
 
 ### Added
 
-- `overwriteBrowserMethods` option to format the Web Browser's (DevTools) logs as well as the Node.JS console logs.  Defaults to `false` so to enable it, you must add it in your config section.
+- `overwriteBrowserMethods` option to format the Web Browser's (DevTools) logs as well as the Node.JS console logs. Defaults to `false` so to enable it, you must add it in your config section.
 - `echoModuleNotifications` option to relay module notifications to the NodeJS console as well as DevTools.
 - `echoErrors` option to relay browser errors to the NodeJS console as well as DevTools.
 
-## [1.0.0] - Initial Release
+## [1.0.0](https://github.com/shbatm/MMM-Logging/releases/tag/v1.0.0) - Initial Release
 
-* Initial commit for public testing.
+- Initial commit for public testing.

@@ -23,8 +23,9 @@ By default, this module will intercept and format ALL `console` log messages fro
 
 ![Example 1](example1.png)
 
-***Note:***
+**_Note:_**
 You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MagicMirrorOrg/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
+
 ```sh
 export ELECTRON_ENABLE_LOGGING=true
 ```
@@ -67,15 +68,15 @@ The module supports various configuration options to customize the logging forma
 
 #### Module specific options
 
-| Option           | Description
-|----------------- |-----------
-| `useColor`       | *Optional* Whether or not to use colored console output. <br>**Type:** `bool` *Default* `true`.
-| `overwriteConsoleMethods`       | *Optional* Whether or not to overwrite the default Node.JS console methods. If `true` any `console.log`, `console.error`, etc. function calls in any module will be formatted.  If `false`, only the module's internal logger will be formatted.  In most cases for MagicMirror, if you're using this module, you want `true` <br>**Type:** `bool` *Default* `true`.
-| `overwriteBrowserMethods`       | *Optional* Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls *in the DevTools console* in any module will be formatted.  If `false`, only the module's internal logger will be formatted.<br>**Type:** `bool` *Default* `false`--usually the DevTools console is good enough for tracing errors.
-| `echoModuleNotifications`       | *Optional* If set any module notifications sent on the front-end will be printed on the Node.JS console log. Can be set to 'notification' to just send the notifications, or 'payload' to include the payloads as well.<br>**Type:** `string` *Default* `'notification'`.
-| `echoErrors`       | *Optional* If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` *Default* `true`.
-| `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nuisance notifications.
-| `format` | *Optional* Custom format string for log messages. Supports placeholders: `{{timestamp}}`, `{{title}}`, `{{message}}`, `{{folder}}`, `{{file}}`, `{{line}}`, `{{method}}`. <br>**Type:** `string` *Default* `"{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})"`.
+| Option                    | Description                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `useColor`                | _Optional_ Whether or not to use colored console output. <br>**Type:** `bool` _Default_ `true`.                                                                                                                                                                                                                                                                                      |
+| `overwriteConsoleMethods` | _Optional_ Whether or not to overwrite the default Node.JS console methods. If `true` any `console.log`, `console.error`, etc. function calls in any module will be formatted. If `false`, only the module's internal logger will be formatted. In most cases for MagicMirror, if you're using this module, you want `true` <br>**Type:** `bool` _Default_ `true`.                   |
+| `overwriteBrowserMethods` | _Optional_ Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls _in the DevTools console_ in any module will be formatted. If `false`, only the module's internal logger will be formatted.<br>**Type:** `bool` _Default_ `false`--usually the DevTools console is good enough for tracing errors. |
+| `echoModuleNotifications` | _Optional_ If set any module notifications sent on the front-end will be printed on the Node.JS console log. Can be set to 'notification' to just send the notifications, or 'payload' to include the payloads as well.<br>**Type:** `string` _Default_ `'notification'`.                                                                                                            |
+| `echoErrors`              | _Optional_ If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` _Default_ `true`.                                                                                                                                                                                                                                   |
+| `ignoreModules`           | _Optional_ Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nuisance notifications.                                                                                                                                                                                                       |
+| `format`                  | _Optional_ Custom format string for log messages. Supports placeholders: `{{timestamp}}`, `{{title}}`, `{{message}}`, `{{folder}}`, `{{file}}`, `{{line}}`, `{{method}}`. <br>**Type:** `string` _Default_ `"{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})"`.                                                                                      |
 
 ### Default configuration
 
