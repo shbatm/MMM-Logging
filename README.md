@@ -6,7 +6,7 @@ This module extends the Node.js console logging capabilities of the MagicMirrorÂ
 
 By default, this module will intercept and format ALL `console` log messages from the MagicMirror instance once it is loaded.
 
-### Examples:
+### Examples
 
 Before MMM-Logging:
 
@@ -24,7 +24,7 @@ After MMM-Logging:
 ![Example 1](example1.png)
 
 ***Note:***
-You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MichMich/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
+You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MagicMirrorOrg/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
 ```sh
 export ELECTRON_ENABLE_LOGGING=true
 ```
@@ -35,7 +35,7 @@ To install the module, assuming you have MagicMirror installed with the default 
 
 ```shell
 cd ~/MagicMirror/modules
-git clone https://github.com/shbatm/MMM-Logging.git
+git clone https://github.com/shbatm/MMM-Logging
 cd MMM-Logging/
 npm install
 ```
