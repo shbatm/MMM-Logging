@@ -2,7 +2,7 @@
 
 This is a module for the [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror/).
 
-This module extends the Node.js console logging capabilities of the MagicMirror² project through implementation of the [`tracer`](https://github.com/baryon/tracer) Node.js module, including adding timestamps and stack traces.
+This module extends the Node.js console logging capabilities of the MagicMirror² project through a modern built-in logger implementation, including adding timestamps and stack traces.
 
 By default, this module will intercept and format ALL `console` log messages from the MagicMirror instance once it is loaded.
 
@@ -36,8 +36,6 @@ To install the module, assuming you have MagicMirror installed with the default 
 ```shell
 cd ~/MagicMirror/modules
 git clone https://github.com/shbatm/MMM-Logging
-cd MMM-Logging/
-npm install
 ```
 
 ## Updating the module
@@ -45,7 +43,6 @@ npm install
 ```sh
 cd ~/MagicMirror/modules/MMM-Logging
 git pull
-npm install
 ```
 
 ## Configuration
@@ -66,18 +63,19 @@ To use this module, add the following configuration block to the **TOP** of the 
 
 ### Configuration options
 
-Refer to documentation for [`tracer`](https://github.com/baryon/tracer) for most configuration options. They can be applied directly in the `config` section.
+The module supports various configuration options to customize the logging format and behavior.
 
 #### Module specific options
 
 | Option           | Description
 |----------------- |-----------
-| `useColor`       | *Optional* Whether or not to use `tracer`'s `colorConsole` method or regular `console` method. <br>**Type:** `bool` *Default* `true`.
-| `overwriteConsoleMethods`       | *Optional* Whether or not to overwrite the default Node.JS console methods. If `true` any `console.log`, `console.error`, etc. function calls in any module will be formatted.  If `false`, only calls to `tracer.log`, etc. will be formatted.  In most cases for MagicMirror, if you're using this module, you want `true` <br>**Type:** `bool` *Default* `true`.
-| `overwriteBrowserMethods`       | *Optional* Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls *in the DevTools console* in any module will be formatted.  If `false`, only calls to `tracer.log`, etc. will be formatted.<br>**Type:** `bool` *Default* `false`--usually the DevTools console is good enough for tracing errors.
+| `useColor`       | *Optional* Whether or not to use colored console output. <br>**Type:** `bool` *Default* `true`.
+| `overwriteConsoleMethods`       | *Optional* Whether or not to overwrite the default Node.JS console methods. If `true` any `console.log`, `console.error`, etc. function calls in any module will be formatted.  If `false`, only the module's internal logger will be formatted.  In most cases for MagicMirror, if you're using this module, you want `true` <br>**Type:** `bool` *Default* `true`.
+| `overwriteBrowserMethods`       | *Optional* Whether or not to overwrite the default web browser console methods. If `true` any `console.log`, `console.error`, etc. function calls *in the DevTools console* in any module will be formatted.  If `false`, only the module's internal logger will be formatted.<br>**Type:** `bool` *Default* `false`--usually the DevTools console is good enough for tracing errors.
 | `echoModuleNotifications`       | *Optional* If set any module notifications sent on the front-end will be printed on the Node.JS console log. Can be set to 'notification' to just send the notifications, or 'payload' to include the payloads as well.<br>**Type:** `string` *Default* `'notification'`.
 | `echoErrors`       | *Optional* If `true`, any errors in the web browser (front-end) will be printed on the Node.JS console log. <br>**Type:** `bool` *Default* `true`.
-| `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nusance notifications.
+| `ignoreModules` | *Optional* Option to ignore notifications sent from certain modules. Defaults to ignoring `clock`, `calendar` and `newsfeed` since these send a lot of nuisance notifications.
+| `format` | *Optional* Custom format string for log messages. Supports placeholders: `{{timestamp}}`, `{{title}}`, `{{message}}`, `{{folder}}`, `{{file}}`, `{{line}}`, `{{method}}`. <br>**Type:** `string` *Default* `"{{timestamp}} <{{title}}> {{message}} ({{folder}}/{{file}}:{{line}} {{method}})"`.
 
 ### Default configuration
 

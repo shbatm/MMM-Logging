@@ -1,11 +1,10 @@
-import {defineConfig, globalIgnores} from "eslint/config";
+import {defineConfig} from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
 import markdown from "@eslint/markdown";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default defineConfig([
-  globalIgnores(["tracer-bundle.js"]),
   {
     files: ["**/*.js"],
     languageOptions: {

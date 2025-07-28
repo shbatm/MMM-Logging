@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-/* global Log, Module, Tracer */
+/* global Log, Module, UniversalLogger */
 
 /* MagicMirror²
  * Module: MMM-Logging
@@ -25,7 +25,7 @@ Module.register("MMM-Logging", {
         if (this.config.overwriteBrowserMethods) {
             this.config.overwriteConsoleMethods = true;
             // Overwrite the Main Console
-            this.console = Tracer.console(this.config);
+            this.console = new UniversalLogger(this.config);
             // Overwrite MagicMirror's Log functions.
             Log.log = console.log;
             Log.info = console.info;
@@ -48,7 +48,7 @@ Module.register("MMM-Logging", {
     },
 
     getScripts () {
-        return ["tracer-bundle.js"];
+        return ["universal-logger.js"];
     },
 
     notificationReceived (notification, payload, sender) {
