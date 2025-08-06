@@ -24,7 +24,7 @@ By default, this module will intercept and format ALL `console` log messages fro
 ![Example 1](example1.png)
 
 **_Note:_**
-You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MagicMirrorOrg/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron rederer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
+You can find more detailed information on debugging your MagicMirror here: [Module Debugging](https://github.com/MagicMirrorOrg/MagicMirror/wiki/Module-Debugging#logging). If you also want the Electron renderer (web browser) console logs to be printed to the standard console (or PM2 logs), change the following line to the very top of `~/MagicMirror/run-start.sh`
 
 ```sh
 export ELECTRON_ENABLE_LOGGING=true
